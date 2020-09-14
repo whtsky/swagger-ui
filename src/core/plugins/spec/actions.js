@@ -6,6 +6,7 @@ import isString from "lodash/isString"
 import debounce from "lodash/debounce"
 import set from "lodash/set"
 import { isJSONObject, paramToValue, isEmptyValue } from "core/utils"
+import JSONbig from "json-bigint"
 
 // Actions conform to FSA (flux-standard-actions)
 // {type: string,payload: Any|Error, meta: obj, error: bool}
@@ -404,7 +405,7 @@ export const executeRequest = (req) =>
       const requestBodyInclusionSetting = oas3Selectors.requestBodyInclusionSetting(pathName, method)
 
       if(isJSONObject(requestBody)) {
-        req.requestBody = JSON.parse(requestBody)
+        req.requestBody = JSONbig.parse(requestBody)
       } else if(requestBody && requestBody.toJS) {
         req.requestBody = requestBody
           .map(
