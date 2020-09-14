@@ -1,5 +1,5 @@
 {
-  "name": "swagger-ui",
+  "name": "@whtsky/swagger-ui",
   "version": "3.33.0",
   "main": "dist/swagger-ui.js",
   "module": "dist/swagger-ui-es-bundle.js",
@@ -14,6 +14,9 @@
     "Robert Barnwell <robert@robertismy.name>",
     "Sahar Jafari <shr.jafari@gmail.com>"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "Apache-2.0",
   "scripts": {
     "automated-release": "release-it -VV --config ./release/.release-it.json",
